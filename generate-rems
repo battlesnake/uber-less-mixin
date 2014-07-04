@@ -1,0 +1,52 @@
+#!/bin/bash
+
+UNITS=( px:1 rem:1/16 )
+
+function manifest {
+
+	for PROP in left top right bottom; do
+		echo $PROP $PROP size
+	done
+
+	for PROP in {margin,padding}-{left,top,right,bottom} border border-spacing; do
+		echo $PROP $PROP size
+	done
+
+	for PROP in border-{top,bottom}-{left,right}-radius; do
+		echo $PROP $PROP size
+		echo $PROP $PROP horizontal vertical
+	done
+
+	for PROP in border-radius; do
+		echo $PROP $PROP size
+		echo $PROP $PROP nw ne se sw
+		echo $PROP $PROP nwh nwv neh nev seh sev swh swv
+	done
+
+	for PROP in border border-{left,top,right,bottom}; do
+		echo $PROP $PROP size =style
+		echo $PROP $PROP size =style =color
+	done
+
+	for PROP in border-{left,top,right,bottom}-width; do
+		echo $PROP $PROP size
+	done
+
+	for PROP in {font-size,line-height,{,min-,max-}{width,height}}; do
+		echo $PROP $PROP size
+	done
+
+	for PROP in {margin,padding,border-width}; do
+		echo $PROP $PROP size
+		echo $PROP $PROP horizontal vertical
+		echo $PROP $PROP top vertical bottom
+		echo $PROP $PROP top right bottom left
+	done
+
+}
+
+function generator {
+	./generator.awk -- "${UNITS[@]}"
+}
+
+manifest | generator
