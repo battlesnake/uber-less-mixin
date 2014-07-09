@@ -24,12 +24,12 @@ rems.less
 
 A set of mixins for handling lengths (e.g. width, height, border-radius),
 which generates CSS directives in both pixels and in rems.  It assumes that
-1rem = 16px by default (so no hacky "html { font-size: 62.5% }" needed),
+1rem = 16px by default (so no hacky `html { font-size: 62.5% }` needed),
 although this unit conversion can be changed in the generate-rems file.
 
-For example, where 2000s CSS authors may write "max-width: 20px", we modern
+For example, where 2000s CSS authors may write `max-width: 20px`, we modern
 authors who don't hate people with accessible font settings can now write
-".max-width(20)" which generates:
+`.max-width(20)` which generates:
 
 ```css
 	max-width: 20px;
@@ -50,8 +50,8 @@ mixins.less
 A set of mixins to workaround repetition introduced by vendor prefixes, and
 syntax differences between *certain* browsers and the standard.
 
-Where one might hope to write "transition: opacity 400ms ease" without fear
-of cross-browser issues, you can use ".transition(opacity 400ms ease)" which
+Where one might hope to write `transition: opacity 400ms ease` without fear
+of cross-browser issues, you can use `.transition(opacity 400ms ease)` which
 generates a set of browser-prefixed instructions in addition to the
 unprefixed version:
 
