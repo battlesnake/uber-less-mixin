@@ -6,6 +6,12 @@
 	opacity: @opacity;
 }
 
+.box-sizing (@value) {
+	-webkit-box-sizing: @value;
+	-moz-box-sizing: @value;
+	box-sizing: @value;
+}
+
 .gradient (...) {
 	background: -webkit-linear-gradient(@arguments);
 	background: -moz-linear-gradient(@arguments);
@@ -48,6 +54,14 @@
 	-ms-transition: @arguments; 
 	-o-transition: @arguments;  
 	transition: @arguments;  
+}
+
+.transition-delay (@value) {
+	-webkit-transition-delay: @value;
+	-moz-transition-delay: @value;
+	-ms-transition-delay: @value;
+	-o-transition-delay: @value;
+	transition-delay: @value;
 }
 
 .transform (...) {
